@@ -40,7 +40,7 @@ let updatePage = function(){
     guessArea.textContent = "Guesses: "+guesses;
 
     let image = document.getElementById("hangmanpic");
-    image.src =`images/hangman${guessCount}`.gif;
+    image.src =`images/hangman${guessCount}.gif';
 
 }
 
