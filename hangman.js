@@ -42,6 +42,24 @@ let updatePage = function(){
     let image = document.getElementById("hangmanpic");
     image.src =`images/hangman${guessCount}.gif`;
 
+    gameFinished = false;
+    document.getElementById("guess").disabled = false;
+    document.querySelector("button[onclick='guessLetter();']").disabled = false
+    
+    if (guessCount <=0) {
+        gameFinished = true;
+        clue.textContent = `Game over! The word was:${word}`;
+        document.getElementById("guess").disabled = true;
+        document.querySelector("button[onclick=`guessLetter();`").disabled = true;
+
+    }
+
+    else if (!clueString.includes("_") && word!==""){
+        gameFinished = true;
+        clue.textContent = `You win! The word was ${word}`;
+        document.getElementById("guess").disabled = true;
+        document.querySelector("button[onclick=`guessLetter();").disabled = true;
+    }
 }
 
 
