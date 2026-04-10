@@ -2,8 +2,9 @@ const POSSIBLE_WORDS = ["obdurate","verisimilitude","defenestrate","obsequious",
 
 var word = "";
 var guesses = ""; //this will be all the guesses
-var guessCount;
+var guessCount = "";
 const MAX_GUESSES = 6;
+var gameFinished = false;
 
 let newGame = function(){       
     //Pick a random word
@@ -53,4 +54,4 @@ let guessLetter = function(){
     }
     guesses+=letter;
     updatePage();
-}
+}``
