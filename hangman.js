@@ -23,7 +23,7 @@ let updatePage = function(){
     for(let i =0;i< word.length;i++)
         {
             var currentLetter = word.charAt(i);
-            if(guesses.indexOf(currentLetter) >=0){
+            if(guess.indexOf(currentLetter) >=0){
                 clueString+=currentLetter+" ";
 
             }
@@ -54,4 +54,5 @@ let guessLetter = function(){
     }
     guesses+=letter;
     updatePage();
-}``
+}`
+    }
