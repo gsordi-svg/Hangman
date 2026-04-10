@@ -23,7 +23,7 @@ let updatePage = function(){
     for(let i =0;i< word.length;i++)
         {
             var currentLetter = word.charAt(i);
-            if(guess.indexOf(currentLetter) >=0){
+            if(guesses.indexOf(currentLetter) >=0){
                 clueString+=currentLetter+" ";
 
             }
@@ -40,19 +40,27 @@ let updatePage = function(){
     guessArea.textContent = "Guesses: "+guesses;
 
     let image = document.getElementById("hangmanpic");
-    image.src =`images/hangman${guessCount}.gif';
+    image.src =`images/hangman${guessCount}.gif`;
 
 }
 
 
 let guessLetter = function(){
+    if (word === "" || guessCount <= 0) {
+        return;
+    }
+
     let input = document.getElementById("guess");
-    let letter = input.value;
-    letter = letter.toLowerCase();
-    if(word.indexOf(letter) < 0) {
+    let letter = input.value.toLowerCase();
+
+    if (letter === "") {
+        return;
+    }
+
+    if (word.indexOf(letter) < 0) {
         guessCount--;
     }
-    guesses+=letter;
+
+    guesses += letter;
     updatePage();
-}`
-    }
+}
