@@ -23,7 +23,7 @@ let updatePage = function(){
     for(let i =0;i< word.length;i++)
         {
             var currentLetter = word.charAt(i);
-            if(guessLetter.index0f(currentLetter) >=0){
+            if(guessLetter.indexOf(currentLetter) >=0){
                 clueString+=currentLetter+" ";
 
             }
